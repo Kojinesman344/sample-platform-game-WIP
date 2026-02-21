@@ -28,6 +28,5 @@ cd sample-platform-game-WIP
 - Implement a power-up system for the player character
 - Introduce new enemy types and AI behaviors
 - Optimize performance and graphics
-- Consider adding multiplayer features in the future.
-
-Stay tuned for updates!
+- {...}
+Stay tuned for updates!!
