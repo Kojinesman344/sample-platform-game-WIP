@@ -1,0 +1,16 @@
+# Game Configuration
+
+## Controls
+- Move Up: W
+- Move Down: S
+- Move Left: A
+- Move Right: D
+- Jump: Space
+- Shoot: Left Mouse Button
+
+## Difficulty
+- Level: Normal
+
+## Volume
+- Music: 70%
+- Effects: 80%
