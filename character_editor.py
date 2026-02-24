@@ -1,1 +1,44 @@
-# Character Editor\n\n## Description\nThis script allows users to design and preview 2D character sprites in real-time.\n\n## Features\n- Select colors, shapes, and accessories for the character.\n- Preview the character in a window.\n- Save your sprite designs to PNG files.\n\n## Requirements\n- Python 3.x\n- Pygame library (install via `pip install pygame`)\n\n## Usage\n1. Run the script: `python character_editor.py`\n2. Use the mouse to select color and accessories.\n3. Click 'Save' to export your design as a PNG file.\n\n## Sample Code\nimport pygame\n\ndef main():\n    pygame.init()\n    screen = pygame.display.set_mode((800, 600))\n    running = True\n    while running:\n        for event in pygame.event.get():\n            if event.type == pygame.QUIT:\n                running = False\n        screen.fill((255, 255, 255))  # Fill the screen with white\n        # Here goes the code to draw the character based on user input\n        pygame.display.flip()\n    pygame.quit()\n\nif __name__ == '__main__':\n    main()
+import pygame
+import json
+
+class CharacterEditor:
+    def __init__(self):
+        self.color = (255, 255, 255)  # Default white color
+        self.parts = {'hair': 'default_hair', 'clothing': 'default_clothing'}
+        self.setup()
+
+    def setup(self):
+        pygame.init()
+        self.screen = pygame.display.set_mode((800, 600))
+        pygame.display.set_caption('Character Editor')
+        self.running = True
+        self.run()
+
+    def run(self):
+        while self.running:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    self.running = False
+                # Handle other events for color picker and part selection
+            self.draw()
+        pygame.quit()
+
+    def draw(self):
+        self.screen.fill((0, 0, 0))  # Clear screen
+        # Draw character and UI elements here
+        pygame.display.flip()
+
+    def pick_color(self):
+        # Logic for color picking
+        pass
+
+    def select_part(self, part_name):
+        # Logic for part selection
+        pass
+
+    def save_character(self):
+        with open('character.json', 'w') as f:
+            json.dump({'color': self.color, 'parts': self.parts}, f)
+
+if __name__ == '__main__':
+    CharacterEditor()
